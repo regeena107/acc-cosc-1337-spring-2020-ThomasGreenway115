@@ -1,2 +1,2 @@
-//
-void allocate_use_release();
+//Create allocate and release function
+

@@ -1,2 +1,2 @@
-//
-void memory_leak();
+//create memory leak function
+

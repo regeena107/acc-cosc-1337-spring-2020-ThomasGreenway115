@@ -1,5 +1,4 @@
-//
+//Create ref function w reference and pointer parameter 
 
-void ref(int& number, int* numberPtr);
 
-int* return_pointer(int number);
+//Create return pointer function

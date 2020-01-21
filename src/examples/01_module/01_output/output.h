@@ -1,1 +1,2 @@
-void output_data();
+//create a function to use cout
+

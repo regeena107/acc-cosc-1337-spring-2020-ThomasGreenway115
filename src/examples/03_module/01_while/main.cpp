@@ -2,7 +2,7 @@
 
 int main() 
 {
-	display("hello");
+	
 
 	return 0;
 }

@@ -2,12 +2,11 @@
 
 int main() 
 {
-	memory_leak(); //we leaked memory (a little bit)
+	//call function 1 time
+	
 
-	while (true) 
-	{
-		memory_leak();//leaked lots of memory
-	}
+	//call function in a loop
+	
 	
 	return 0;
 }
