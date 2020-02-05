@@ -16,6 +16,6 @@ int main()
 
 	cout << square_number(num)<<"\n";
 	cout << num;
-	int num1 = square_number(5);
+
 	return 0;
 }
