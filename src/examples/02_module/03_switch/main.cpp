@@ -8,9 +8,9 @@ int main()
 	cout << "Enter a number(1-4)";
 	cin >> option;
 
-	string result = menu(option);
+	//string result = menu(option);
 
-	cout << result;
+//	cout << result;
 
 	return 0;
 }
