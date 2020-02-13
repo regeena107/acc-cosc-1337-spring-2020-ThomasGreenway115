@@ -20,5 +20,5 @@ int factorial(int num)
 		fact *= i;
 	}
 
-	return (0);
+	return fact;
 }
