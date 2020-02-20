@@ -1,5 +1,5 @@
 //write include statements
-
+#include "dna.h"
 //write using statements
 
 
@@ -12,5 +12,28 @@ user enters a y or Y.
 */
 int main() 
 {
-	return 0;
+	string yes_no = "Y";
+	while ((yes_no == "y") || (yes_no == "Y"))
+	{
+		int menu = 0;
+		string dna_str;
+		cout << "Press 1 to Calculate GC Content or Press 2 to Get the DNA Completement.";
+		cin >> menu;
+		cout << "Please enter a DNA string.";
+		cin >> dna_str;
+		
+		if (menu == 1)
+		{
+			cout << "The GC content is " << get_gc_content(dna_str) << " percent." << "\n";	
+		}
+		else if (menu == 2)
+		{
+			cout << "The DNA completement is " << get_dna_complement(dna_str) << "\n";
+		}
+		cout << "Do you want to contiune? Enter Y or y to continue";
+		cin >> yes_no;
+	}
+
+	
+		return 0;
 }
