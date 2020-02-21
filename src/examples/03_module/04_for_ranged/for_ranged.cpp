@@ -1,5 +1,5 @@
 #include "for_ranged.h"
-#include "..\06_vectors\vec.h"
+
 /*
 Write code for loop_string_w_index that accepts a string parameter.
 The function uses an indexed for loop to iterate and display the characters in the
