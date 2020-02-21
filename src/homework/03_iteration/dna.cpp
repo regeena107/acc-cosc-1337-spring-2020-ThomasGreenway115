@@ -8,12 +8,20 @@ Return quotient.
 */
 double get_gc_content(const string & dna)
 {
-	
-	size_t dna_num1 = std::count(dna.begin(), dna.end(), 'G');
-	size_t dna_num2 = std::count(dna.begin(), dna.end(), 'C');
-	double dna_num = dna_num1 + dna_num2;
-	double dna_total = dna_num / dna.length();
-	
+	double dna_GC = 0.0;
+	for (int i = 0; i < dna.length(); i++)
+	{
+		if (dna[i] == 'G')
+		{
+			dna_GC++;
+		}
+		else if (dna[i] == 'C')
+		{
+			dna_GC++;
+		}
+	}
+	double dna_total = dna_GC / dna.length();
+
 	return dna_total;
 }
 
@@ -48,13 +56,23 @@ string get_dna_complement(string dna)
 {
 	string reversed_dna = get_reverse_string(dna);
 	
-	std::replace(reversed_dna.begin(), reversed_dna.end(), 'A', 'T');
-	
-	std::replace(reversed_dna.begin(), reversed_dna.end(), 'T', 'A');
-	
-	std::replace(reversed_dna.begin(), reversed_dna.end(), 'G', 'C');
-	
-	std::replace(reversed_dna.begin(), reversed_dna.end(), 'C', 'G');
-	
+	for (char & i : reversed_dna) 
+	{
+		switch (i) {
+		case 'A':
+			i = 'T';
+			break;
+		case 'T':
+			i = 'A';
+			break;
+		case 'C':
+			i = 'G';
+			break;
+		case 'G':
+			i = 'C';
+			break;
+		}
+	}
 	return reversed_dna;
 }
+
