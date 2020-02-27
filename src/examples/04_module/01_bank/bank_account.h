@@ -1,4 +1,5 @@
 //bank_account.h
+#include <string>
 class BankAccount
 {
 public:
@@ -8,4 +9,13 @@ public:
 	void withdraw(int amount);
 private:
 	int balance{ 0 };
+};
+
+class InvalidAmount
+{
+public:
+	InvalidAmount(std::string msg) : message{ msg } {}
+	std::string get_message()const { return message; }
+private:
+	std::string message;
 };
