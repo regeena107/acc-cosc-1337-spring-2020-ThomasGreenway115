@@ -7,5 +7,6 @@ TEST_CASE("Verify Test Configuration", "verification") {
 }
 TEST_CASE("Test if get_area(4,5) = 20")
 {
-	REQUIRE(rectangle(4, 5) == 20);
+	auto r = rectangle(4, 5);
+	REQUIRE(r.get_area() == 20);
 }
