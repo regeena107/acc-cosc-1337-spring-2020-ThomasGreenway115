@@ -3,14 +3,15 @@
 
 void TicTacToe::start_game(string first_player)
 {
-	if (first_player != "X" || first_player != "O")
-	{
-		throw error("\n Player must be X or O.");
-	}
-	else
+	if (first_player == "X" || first_player == "O")
 	{
 		player = first_player;
 	}
+	else if (first_player != "X" || first_player != "O")
+	{
+		throw error("\n Player must be X or O.");
+	}
+	
 }
 
 void TicTacToe::mark_board(int position)
@@ -23,15 +24,9 @@ void TicTacToe::mark_board(int position)
 	{
 		throw error("\n Must start game first.");
 	}
-	else
-	{
-		set_next_player();
-	}
+	set_next_player();
 }
-string TicTacToe::get_player() const
-{
-	return player;
-}
+
 void TicTacToe::set_next_player()
 {
 	if (player == "X")

@@ -20,7 +20,7 @@ public:
 	
 	void mark_board(int position);
 
-	string get_player()const;
+	string get_player()const { return player; };
 private:
 	void set_next_player();
 
