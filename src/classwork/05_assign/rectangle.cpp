@@ -10,3 +10,9 @@ void rectangle::calculate_area()
 {
 	area = width * height;
 }
+
+std::ostream & operator<<(std::ostream & out,const rectangle & b)
+{
+	out << "The area is : " << b.area << "\n";
+	return out;
+}
