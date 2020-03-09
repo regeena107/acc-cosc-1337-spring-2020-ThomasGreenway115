@@ -1,16 +1,18 @@
-#include "bank_account.h"
+#include "checking_account.h"
 #include<vector>
 using std::cout; using std::vector; using std::cin;
 
 int main()
 {	
-	BankAccount a(50), b(10);
-	
+	CheckingAccount c;
+
+	CheckingAccount a(50), b(10);
+	//BankAccount c = a + b;
 	display_balance(a);
 	cin >> a;
 	cout << a;
 	
-	vector<BankAccount> accounts{ BankAccount(100), BankAccount(200), BankAccount(300) };
+	vector<CheckingAccount> accounts{ CheckingAccount(100), CheckingAccount(200), CheckingAccount(300) };
 	for (auto act : accounts)
 	{
 		cout << act.get_balance() << "\n";
@@ -18,7 +20,7 @@ int main()
 	
 	
 	
-	BankAccount account(500);
+	CheckingAccount account(500);
 	int balance = account.get_balance();
 	cout << "Balance: " << balance;
 	try
