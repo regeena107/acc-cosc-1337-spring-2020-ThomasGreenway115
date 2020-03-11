@@ -1,7 +1,9 @@
 #include "checking_account.h"
+#include "savings_account.h"
 #include<vector>
+#include <functional>;
 using std::cout; using std::vector; using std::cin;
-
+using std::reference_wrapper;
 int main()
 {	
 	CheckingAccount c;
@@ -31,5 +33,14 @@ int main()
 	{
 		cout << e.get_message();
 	}
+	SavingsAccount s(100);
+	CheckingAccount r(100);
+
+	vector< reference_wrapper <BankAccount>> acts{s, r};
+	for (auto account_ref : acts)
+	{
+		cout << account_ref.get().get_balance() << "\n";
+	}
+	
 	return 0;
 }
