@@ -2,8 +2,11 @@
 #include "savings_account.h"
 #include<vector>
 #include <functional>;
+#include <memory>
 using std::cout; using std::vector; using std::cin;
 using std::reference_wrapper;
+using std::unique_ptr;
+using std::make_unique;
 int main()
 {	
 	CheckingAccount c;
@@ -33,13 +36,17 @@ int main()
 	{
 		cout << e.get_message();
 	}
-	SavingsAccount s(100);
-	CheckingAccount r(100);
+	
+	unique_ptr<BankAccount> s = make_unique<SavingsAccount>(100);
+	unique_ptr<BankAccount> r = make_unique<CheckingAccount>(100);
 
-	vector< reference_wrapper <BankAccount>> acts{s, r};
-	for (auto account_ref : acts)
+	vector<unique_ptr<BankAccount>> acts;//{std::move(s), std::move(c) };
+	acts.push_back(std::move(s));
+	acts.push_back(std::move(r));
+
+	for (auto &account : acts)
 	{
-		cout << account_ref.get().get_balance() << "\n";
+		cout << account->get_balance() << "\n";
 	}
 	
 	return 0;
