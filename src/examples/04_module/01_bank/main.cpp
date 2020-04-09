@@ -1,15 +1,16 @@
 #include "checking_account.h"
 #include "savings_account.h"
 #include<vector>
-#include <functional>;
+#include <functional>
 #include <memory>
+#include "atm.h"
 using std::cout; using std::vector; using std::cin;
 using std::reference_wrapper;
 using std::unique_ptr;
 using std::make_unique;
 int main()
 {	
-	CheckingAccount c;
+	/*CheckingAccount c;
 
 	CheckingAccount a(50), b(10);
 	//BankAccount c = a + b;
@@ -35,19 +36,22 @@ int main()
 	catch (InvalidAmount e)
 	{
 		cout << e.get_message();
-	}
+	}*/
 	
 	unique_ptr<BankAccount> s = make_unique<SavingsAccount>(100);
 	unique_ptr<BankAccount> r = make_unique<CheckingAccount>(100);
+	//cout << s;
 
 	vector<unique_ptr<BankAccount>> acts;//{std::move(s), std::move(c) };
 	acts.push_back(std::move(s));
 	acts.push_back(std::move(r));
 
-	for (auto &account : acts)
-	{
-		cout << account->get_balance() << "\n";
-	}
+	Customer cust(acts);
+	ATM atm(cust);
+	//Some interaction  with customer
+	cout << atm;
+	
+	
 	
 	return 0;
 }
