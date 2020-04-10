@@ -213,8 +213,8 @@ void TicTacToe::set_winner()
 std::ostream & operator<<(std::ostream & out, TicTacToe& c)
 {
 	out << "\n";
-
-	for (std::size_t i = 0; i < 9; i += 3) {
+	for (std::size_t i = 0; i < 9; i += 3) 
+	{
 		out << c.pegs[i] << " | " << c.pegs[i + 1] << " | " << c.pegs[i + 2] << "\n";
 	}
 	return out;
